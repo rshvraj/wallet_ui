@@ -18,6 +18,38 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.pink,
+        child: Icon(
+          Icons.monetization_on,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[200],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.home,
+                size: 32,
+                color: Colors.pink[200],
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.settings,
+                size: 32,
+                color: Colors.grey[600],
+              ),
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -124,7 +156,54 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 12,
+            ),
             // column -> stats + transaction
+            Column(
+              children: [
+                ListTile(
+                  leading: Image.asset(
+                    'lib/icons/analysis.png',
+                  ),
+                  title: Text(
+                    'Statistics',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    'Payment and Income',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+                ListTile(
+                  leading: Image.asset(
+                    'lib/icons/transaction.png',
+                  ),
+                  title: Text(
+                    'Transaction',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    'Transaction history',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ],
+            ),
           ],
         ),
       ),
